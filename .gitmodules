@@ -1,0 +1,18 @@
+[submodule "deps/httpparser"]
+	path = deps/httpparser
+	url = https://github.com/nekipelov/httpparser.git
+[submodule "deps/md5"]
+	path = deps/md5
+	url = https://github.com/evgeny-oyun/md5.git
+[submodule "deps/parson"]
+	path = deps/parson
+	url = https://github.com/kgabis/parson.git
+[submodule "deps/slre"]
+	path = deps/slre
+	url = https://github.com/cesanta/slre.git
+[submodule "deps/http-parser"]
+	path = deps/http-parser
+	url = https://github.com/nodejs/http-parser.git
+[submodule "deps/httpd"]
+	path = deps/httpd
+	url = https://github.com/evgeny-oyun/httpd.git
