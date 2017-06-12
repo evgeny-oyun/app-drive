@@ -13,7 +13,7 @@ namespace Http
 
   const string Request::method() const
   {
-    return _headers["Request-Method"];
+    return _headers.at("Request-Method");
   }
 
   const string Request::dump() const
