@@ -16,3 +16,6 @@
 [submodule "deps/httpd"]
 	path = deps/httpd
 	url = https://github.com/evgeny-oyun/httpd.git
+[submodule "deps/ccgi"]
+	path = deps/ccgi
+	url = https://github.com/evgeny-oyun/ccgi.git

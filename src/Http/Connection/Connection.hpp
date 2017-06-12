@@ -16,14 +16,14 @@ namespace Http
 
   class Connection{
     private:
-      Request       _request;
-      Response      _response;
+      Request       _request; // Http request info
+      Response      _response; // Response info
     public:
       Request        *request;  // reference to self _request
       Response       *response; // reference to self _response
-      httpd_string_t  httpd_buffer;
-      string          buffer;
-      uint8_t         state;
+      httpd_string_t  httpd_buffer; // for exchange with httpd
+      string          buffer; // any one time cycle strings
+      uint8_t         state; // progress
 
       Connection();
     };

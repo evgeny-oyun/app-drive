@@ -13,15 +13,13 @@ namespace Http
 
     class HttpRequest{
     private:
-      HttpRequestParser _parser;
+
     public:
       void parse(const char *chunk, const size_t length)
       {
-        
+
       }
     };
-
-    ::HttpRequestParser _parser;
   }
 }
 

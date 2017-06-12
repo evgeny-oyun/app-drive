@@ -15,6 +15,7 @@ namespace Http
     response  = &_response;
     state     = CONNECTION_STATE_REQUEST_READ;
 
+    /* by default we are keep a connection on until response were ready */
     httpd_buffer.value  = NULL;
     httpd_buffer.length = 0;
   }
