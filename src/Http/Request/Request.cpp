@@ -11,6 +11,11 @@ namespace Http
 {
   using namespace std;
 
+  const string Request::method() const
+  {
+    return _headers["Request-Method"];
+  }
+
   const string Request::dump() const
   {
     string _tmp;

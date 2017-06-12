@@ -11,6 +11,7 @@ namespace Http
 {
   class Request : public Headers {
   public:
+    const string method() const;
     const string dump() const;
   };
 }

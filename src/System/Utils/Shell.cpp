@@ -14,6 +14,7 @@ namespace System
 {
   namespace Utils
   {
+    using namespace std;
     class Shell{
     private:
       int          fd;
@@ -71,7 +72,7 @@ namespace System
         }
 
         char buffer[SYSTEM_UTILS_SHELL_BUFFER_SIZE];
-        size_t read_bytes;
+        int read_bytes;
 
         memset(buffer, 0, SYSTEM_UTILS_SHELL_BUFFER_SIZE);
 
