@@ -58,29 +58,29 @@ namespace Http {
   {
     Connection *connection = (Connection*)data;
 
-    if(connection == NULL)
+    if(connection == NULL || connection->request == NULL)
     {
       return;
     }
-
-    connection->state = CONNECTION_STATE_REQUEST_ERROR;
+    
+    auto detail = " on " + connection->request->getHeader("Request-Uri") + "["+connection->request->method()+"]";
 
     switch(error_code)
     {
       case HTTPD_ERR_IO_READ:{
-        throw Exception("i/o read() error");
+        throw Exception("i/o read() error" + detail);
       }
       break;
       case HTTPD_ERR_IO_WRITE:{
-        throw Exception("i/o write() error");
+        throw Exception("i/o write() error" + detail);
       }
       break;
       case HTTPD_ERR_IO_CLOSE:{
-        throw Exception("connection refused");
+        throw Exception("connection refused" + detail);
       }
       break;
       case HTTPD_ERR_PARSER:{
-        throw Exception("HTTP request parsing failed");
+        throw Exception("HTTP request parsing failed" + detail);
       }
       break;
     }
