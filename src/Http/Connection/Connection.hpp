@@ -24,7 +24,11 @@ namespace Http
       httpd_string_t  httpd_buffer; // for exchange with httpd
       string          buffer; // any one time cycle strings
       uint8_t         state; // progress
-
+    
+      // big buffers support (over 4Kb)
+      size_t          sent_bytes  = 0;
+      size_t          total_bytes = 0;
+    
       Connection();
     };
 }
