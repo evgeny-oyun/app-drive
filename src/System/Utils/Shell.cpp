@@ -18,7 +18,7 @@ namespace System
     class Shell{
     private:
       int          fd;
-      FILE        *stream;
+      FILE        *stream = NULL;
       std::string  _result;
       bool         _finished = false;
     public:
@@ -104,7 +104,7 @@ namespace System
         return _finished;
       }
 
-      const std::string response() const
+      std::string response() const
       {
         return _result;
       }
