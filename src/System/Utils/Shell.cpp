@@ -80,14 +80,14 @@ namespace System
 
         if(read_bytes == -1)
         {
-          if(errno != EAGAIN || errno != EWOULDBLOCK)
+          if(errno != EAGAIN && errno != EWOULDBLOCK)
           {
             close(fd);
             pclose(stream);
             _finished = true;
           }
         }
-        else if(read_bytes == 0 || feof(stream))
+        else if(read_bytes == 0)
         {
           close(fd);
           pclose(stream);
