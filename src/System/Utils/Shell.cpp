@@ -59,11 +59,6 @@ namespace System
         }
       }
 
-      bool busy()
-      {
-        return (stream != NULL && fd > 0);
-      }
-
       void execute()
       {
         if(_finished == true)
@@ -82,20 +77,17 @@ namespace System
         {
           if(errno != EAGAIN && errno != EWOULDBLOCK)
           {
-            close(fd);
             pclose(stream);
             _finished = true;
           }
         }
         else if(read_bytes == 0)
         {
-          close(fd);
           pclose(stream);
           _finished = true;
         }
         else
         {
-          buffer[read_bytes] = '\0';
           _result += std::string(buffer, read_bytes);
         }
       }
