@@ -189,7 +189,7 @@ namespace View{
               {
                 _tmp = str.substr(*caps[0].ptr, caps[0].len);
 
-                if(_is_file_(_tmp.c_str()))
+                if(is_file(_tmp.c_str()))
                 {
                   _result += file_get_contents(_tmp.c_str());
                 }
@@ -243,9 +243,9 @@ namespace View{
   {
     std::string       _compressed;
 
-    _compressed = String::str_replace("\n", "", _result);
-    _compressed = String::str_replace("\r", "", _compressed);
-    _compressed = String::str_replace("  ", " ", _compressed);
+    _compressed = String::replace("\n", "", _result);
+    _compressed = String::replace("\r", "", _compressed);
+    _compressed = String::replace("  ", " ", _compressed);
 
     return _compressed;
   }
