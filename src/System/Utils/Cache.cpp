@@ -28,16 +28,16 @@ namespace System{
         _tokens.push_back(token);
       }
 
-      void init()
+      void init(std::string path = "/tmp/")
       {
+        _path = path;
+
         for(auto &t : _tokens)
         {
           _hash += t + "@";
         }
 
-        char *hmd5 = md5((unsigned char*)_hash.c_str());
-
-        _hash = std::string(hmd5);
+        _hash = md5(_hash);
 
         _tokens.clear();
 
@@ -49,8 +49,6 @@ namespace System{
         {
           _result = file_get_contents(_path.c_str());
         }
-
-        free(hmd5);
       }
 
       bool exists()
