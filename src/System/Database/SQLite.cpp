@@ -31,6 +31,11 @@ namespace System{
       {
         sqlite3_close(db);
       };
+      
+      void close()
+      {
+        sqlite3_close(db);
+      }
 
       /*
        * Attach a database file
