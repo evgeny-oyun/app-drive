@@ -358,9 +358,13 @@ namespace System{
 
       std::string error()
       {
-        return std::string(
+        std::string msg = std::string(
           sqlite3_errstr(result)
         );
+        
+        sqlite3_free(result);
+        
+        return msg;
       }
 
     };
