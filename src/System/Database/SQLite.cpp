@@ -358,11 +358,10 @@ namespace System{
 
       std::string error()
       {
-        std::string msg = std::string(
-          sqlite3_errstr(result)
-        );
+        char *err = sqlite3_errstr(result);
+        std::string msg = std::string(err);
         
-        sqlite3_free(result);
+        sqlite3_free(err);
         
         return msg;
       }
