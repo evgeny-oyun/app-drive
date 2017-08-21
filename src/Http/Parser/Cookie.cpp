@@ -17,7 +17,7 @@ namespace Http
 
     class Cookie{
     public:
-      static void parse(const string *raw, function<void(const string*, const string*)> &handler)
+      static void parse(const string *raw, const function<void(const string*, const string*)> &handler)
       {
         Base(raw, '=', ';', handler);
       }
