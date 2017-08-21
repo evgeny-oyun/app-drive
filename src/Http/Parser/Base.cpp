@@ -12,7 +12,7 @@ namespace Http
 
     class Base{
     public:
-      static void parse(const string *raw, const char strings_delimiter, const char tokens_delimiter, function<void(const string*, const string*)> &handler)
+      static void parse(const string *raw, const char strings_delimiter, const char tokens_delimiter, const function<void(const string*, const string*)> &handler)
       {
         if(raw == NULL || raw->size() == 0)
         {
