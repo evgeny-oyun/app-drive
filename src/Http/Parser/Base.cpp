@@ -12,7 +12,7 @@ namespace Http
 
     class Base{
     public:
-      static void parse(const string *raw, const char delimiter, function<void(const string*, const string*)> &handler)
+      static void parse(const string *raw, const char strings_delimiter, const char tokens_delimiter, function<void(const string*, const string*)> &handler)
       {
         if(raw == NULL || raw->size() == 0)
         {
@@ -36,16 +36,10 @@ namespace Http
 
         for(i = 0; i<= max; i++)
         {
-          if(raw->at(i) == '\t' || raw->at(i) == '\r' || raw->at(i) == '\n')
-          {
-            throw Http::Exception("A cookie parsing error: the string you given contains forbidden char");
-            return;
-          }
-
           switch(state)
           {
             case STATE_KEY_INIT: {
-              if(raw->at(i) == ' ' || raw->at(i) == delimiter)
+              if(raw->at(i) == ' ' || raw->at(i) == strings_delimiter)
               {
                 offset++;
                 continue;
@@ -62,7 +56,7 @@ namespace Http
                 continue;
               }
 
-              if(raw->at(i) == '=')
+              if(raw->at(i) == tokens_delimiter)
               {
                 key = raw->substr(offset, length);
 
@@ -83,7 +77,7 @@ namespace Http
                 continue;
               }
 
-              if(raw->at(i) == delimiter || i == max)
+              if(raw->at(i) == strings_delimiter || i == max)
               {
                 offset++;
 
