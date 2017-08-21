@@ -81,7 +81,7 @@ namespace Http
               {
                 offset++;
 
-                if(i == max && raw->at(max) != delimiter)
+                if(i == max && raw->at(max) != strings_delimiter)
                 {
                   length++;
                 }
