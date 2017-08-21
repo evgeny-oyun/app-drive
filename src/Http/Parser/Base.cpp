@@ -1,6 +1,6 @@
 #include <iostream>
 #include <functional>
-#include "../Exception/Exception.hpp"
+
 #ifndef _HTTP_PARSER_BASE_C
 #define _HTTP_PARSER_BASE_C
 
