@@ -19,7 +19,7 @@ namespace Http
     public:
       static void parse(const string *raw, function<void(const string*, const string*)> &handler)
       {
-        Base(raw, ';', handler);
+        Base(raw, '=', ';', handler);
       }
     };
   }
