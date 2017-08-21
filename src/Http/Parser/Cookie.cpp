@@ -14,6 +14,7 @@ namespace Http
   namespace Parser
   {
     using namespace std;
+    using namespace Http::Parser;
 
     class Cookie{
     public:
