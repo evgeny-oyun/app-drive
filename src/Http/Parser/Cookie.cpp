@@ -20,7 +20,7 @@ namespace Http
     public:
       static void parse(const string *raw, const function<void(const string*, const string*)> &handler)
       {
-        Base::parse(raw, '=', ';', handler);
+        Base::parse(raw, ';', '=', handler);
       }
     };
   }
